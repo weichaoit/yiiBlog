@@ -12,17 +12,10 @@ class IndexController extends Controller
      * 使用的是 account表
      */
     public function actionIndex(){
-        // 使用AR
-        // 表示查询出account中的所有数据
-//        var_dump(\Yii::$app->db);
-//        $db = new \yii\db\Connection();
-//        var_dump(Yii::$app->params['pi']);
-        // 设置别名
-//        Yii::setAlias('@myroot', 'D:/yii');
-//        Yii::setAlias('@myurl', 'http://www.yii.com');
-//        echo "<hr/>";
-//        var_dump(Yii::getAlias('@web'));
-//        exit;
+
+        var_dump(\Yii::$app->db);
+
+        exit;
         $userLists = User::find()->all();
         return $this->render('index', [
             'userLists' => $userLists,
@@ -36,7 +29,7 @@ class IndexController extends Controller
             $age = $_POST['age'];
 
             // 使用活动记录新增数据
-            $account = new Account();
+            $account = new User();
 
             $account->name = $name;
             $account->age = $age;
