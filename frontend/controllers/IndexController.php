@@ -13,9 +13,6 @@ class IndexController extends Controller
      */
     public function actionIndex(){
 
-        var_dump(\Yii::$app->db);
-
-        exit;
         $userLists = User::find()->all();
         return $this->render('index', [
             'userLists' => $userLists,
